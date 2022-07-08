@@ -14,18 +14,13 @@ $(document).ready(function () {
 
     function randomPosition(widthScreen, heightScreen) {
         let top, left;
-    console.log(heightScreen, 'heightScreen');
-    console.log(widthScreen,'widthScreen');
-console.log(ballHeight);
-console.log(ballWidth);
         top = Math.floor(Math.random() * heightScreen - ballHeight);
         left = Math.floor(Math.random() * widthScreen - ballWidth);
         $('.ball').css({
             top: `${top}px`,
             left: `${left}px`
         })
-        console.log(top);
-        console.log(left);
+
     }
 
     function randomColor(min, max) {
