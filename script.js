@@ -5,22 +5,17 @@ $(document).ready(function () {
     let ballWidth = $('.ball').width()+10;
 
 
-    setInterval(randomColorPosition, 1000);
-
-    function randomColorPosition() {
-        randomPosition(widthScreen, heightScreen);
-        randomColor(0, 255);
-    }
+    setInterval(randomPosition, 1000, widthScreen, heightScreen);
+    setInterval(randomColor, 500, 0, 255);
 
     function randomPosition(widthScreen, heightScreen) {
         let top, left;
         top = Math.floor(Math.random() * heightScreen - ballHeight);
         left = Math.floor(Math.random() * widthScreen - ballWidth);
-        $('.ball').css({
+        $(".ball").animate({
             top: `${top}px`,
             left: `${left}px`
-        })
-
+        },1000)
     }
 
     function randomColor(min, max) {
